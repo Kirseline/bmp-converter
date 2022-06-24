@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\TestGUI\\bmp\\bmp\\bmp.csproj": {}
+    "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {}
   },
   "projects": {
-    "G:\\TestGUI\\bmp\\bmp\\bmp.csproj": {
+    "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\TestGUI\\bmp\\bmp\\bmp.csproj",
+        "projectUniqueName": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
         "projectName": "bmp",
-        "projectPath": "G:\\TestGUI\\bmp\\bmp\\bmp.csproj",
+        "projectPath": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
         "packagesPath": "C:\\Users\\arist\\.nuget\\packages\\",
-        "outputPath": "G:\\TestGUI\\bmp\\bmp\\obj\\",
+        "outputPath": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

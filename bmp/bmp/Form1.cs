@@ -167,6 +167,12 @@ namespace bmp
             }
         }
 
+        public static void SaveByteArrayToFileWithBinaryWriter(byte[] data, string filePath)
+        {
+            using var writer = new BinaryWriter(File.OpenWrite(filePath));
+            writer.Write(data);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (image1 != null)
@@ -175,15 +181,23 @@ namespace bmp
                 SaveFileDialog savefile = new SaveFileDialog();
                 savefile.RestoreDirectory = true;
                 savefile.InitialDirectory = "c:\\";
-                // savefile.FileName = String.Format("{0}.vbc", txtidstruk.Text);
+                //savefile.FileName = String.Format("{0}.vbc", txtidstruk.Text);
                 savefile.DefaultExt = "*.vbc*";
                 savefile.Filter = "vbc file|*.vbc";
 
                 if (savefile.ShowDialog() == DialogResult.OK)
                 {
-                    using (System.IO.StreamWriter sw = new System.IO.StreamWriter(savefile.FileName))
-                        for(int i = 0; i < vbc.Length;i++)
-                            sw.Write(vbc[i]);
+                   // using (System.IO.StreamWriter sw = new System.IO.StreamWriter(savefile.FileName))
+
+                        /*for (int i = 0; i < vbc.Length; i++)
+                        {
+                            System.Diagnostics.Debug.Write(vbc[i],"X");
+                            sw.WriteAllBytes("{0:X4}", vbc[i]);
+                            
+                            System.Diagnostics.Debug.Write("\n");
+                        }*/
+                        SaveByteArrayToFileWithBinaryWriter(vbc, savefile.FileName);
+
                 }
             }
 
