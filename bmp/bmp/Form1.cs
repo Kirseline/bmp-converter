@@ -39,43 +39,51 @@ namespace bmp
 
         private byte[] write_vbc(Bitmap img)
         {
-            int bytex = (int)img.Width / 8;
+            int bytex = (int)img.Width / 8 + 1;
             byte bx = 0;
-            short bmp_dimension = (short)(bytex * image1.Height);
-
+            UInt16 bmp_dimension = (UInt16)((bytex * img.Height) + 5);
+            Color white = Color.FromArgb(255, 255, 255);
+           
+            int x = 0;
             int idx = 5; //data starting adress
+            int byte_completition = 0;
 
-            byte[] array = new byte[bmp_dimension + 5];
+
+            byte[] array = new byte[bmp_dimension];
             array[0] = 0xA7;
             array[1] = (byte)img.Width;
             array[2] = (byte)img.Height;
             array[3] = (byte)(bmp_dimension >> 8);
-            array[4] = (byte)bmp_dimension;
+            array[4] = (byte)(bmp_dimension & 0x00ff);
 
-            for (int y = 0; y < image1.Height; y++)
+
+            for (int y = 0; y < img.Height; y++)
             {
-                for (int x = 0; x < bytex; x++)
+                
+                do
                 {
-                    array[idx] = 0x00;
-
-                    for (int i = 0; i < 8; i++)
+                    if (byte_completition == 8)
                     {
-                        Color pixelColor = image1.GetPixel(i + (8 * x), y);
-                        Color white = Color.FromArgb(255, 255, 255);
-
-                        if (!pixelColor.Equals(white))
-                        {
-                            image1.SetPixel(x, y, Color.FromArgb(0, 255, 0));
-                            bx |= (byte)(0x80 >> i);
-                        }
-                        else
-                        {
-                            image1.SetPixel(x, y, Color.FromArgb(255, 255, 255));
-                            bx &= (byte)~(0x80 >> i);
-                        }
+                        array[idx++] = bx;
+                        bx = 0x00;
+                        byte_completition = 0;
                     }
-                    array[idx++] = bx;
+
+                    Color pixelColor = img.GetPixel(x, y);
+
+                    if (!pixelColor.Equals(white))
+                        bx |= (byte)(0x80 >> x % 8);
+                    else
+                        bx &= (byte)~(0x80 >> x % 8);
+
+                    byte_completition++;
+                    x++;
                 }
+                while (x < img.Width);
+                array[idx++] = bx;
+
+                byte_completition = 0;
+                x = 0;
             }
 
             return array;
@@ -83,7 +91,7 @@ namespace bmp
 
 
 
-            }
+        }
          
         private void button1_Click(object sender, EventArgs e)
         {

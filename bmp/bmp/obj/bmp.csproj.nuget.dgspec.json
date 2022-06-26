@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {}
+    "C:\\Users\\arist\\source\\repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {
+    "C:\\Users\\arist\\source\\repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
+        "projectUniqueName": "C:\\Users\\arist\\source\\repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
         "projectName": "bmp",
-        "projectPath": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
+        "projectPath": "C:\\Users\\arist\\source\\repos\\Kirseline\\bmp-converter\\bmp\\bmp\\bmp.csproj",
         "packagesPath": "C:\\Users\\arist\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arist\\Source\\Repos\\Kirseline\\bmp-converter\\bmp\\bmp\\obj\\",
         "projectStyle": "PackageReference",

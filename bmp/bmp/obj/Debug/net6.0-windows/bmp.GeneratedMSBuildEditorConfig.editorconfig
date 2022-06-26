@@ -13,4 +13,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = bmp
-build_property.ProjectDir = C:\Users\arist\Source\Repos\Kirseline\bmp-converter\bmp\bmp\
+build_property.ProjectDir = C:\Users\arist\source\repos\Kirseline\bmp-converter\bmp\bmp\
