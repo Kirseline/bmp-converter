@@ -81,7 +81,6 @@ namespace bmp
                 }
                 while (x < img.Width);
                 array[idx++] = bx;
-
                 byte_completition = 0;
                 x = 0;
             }
