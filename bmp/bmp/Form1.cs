@@ -39,7 +39,7 @@ namespace bmp
 
         private byte[] write_vbc(Bitmap img)
         {
-            int bytex = (int)img.Width / 8 + 1;
+            int bytex = (int)img.Width / 8 ;
             byte bx = 0;
             UInt16 bmp_dimension = (UInt16)((bytex * img.Height) + 5);
             Color white = Color.FromArgb(255, 255, 255);
@@ -182,9 +182,9 @@ namespace bmp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (image1 != null)
+            if (prew != null)
             {
-                byte[] vbc = write_vbc(image1);
+                byte[] vbc = write_vbc(prew);
                 SaveFileDialog savefile = new SaveFileDialog();
                 savefile.RestoreDirectory = true;
                 savefile.InitialDirectory = "c:\\";
@@ -194,16 +194,16 @@ namespace bmp
 
                 if (savefile.ShowDialog() == DialogResult.OK)
                 {
-                   // using (System.IO.StreamWriter sw = new System.IO.StreamWriter(savefile.FileName))
+                    /*using (System.IO.StreamWriter sw = new System.IO.StreamWriter(savefile.FileName))
 
-                        /*for (int i = 0; i < vbc.Length; i++)
-                        {
-                            System.Diagnostics.Debug.Write(vbc[i],"X");
-                            sw.WriteAllBytes("{0:X4}", vbc[i]);
-                            
-                            System.Diagnostics.Debug.Write("\n");
-                        }*/
-                        SaveByteArrayToFileWithBinaryWriter(vbc, savefile.FileName);
+                         for (int i = 0; i < vbc.Length; i++)
+                         {
+                             System.Diagnostics.Debug.Write(vbc[i],"X");
+                             sw.WriteAllBytes("{0:X4}", vbc[i]);
+
+                             System.Diagnostics.Debug.Write("\n");
+                    */
+                    SaveByteArrayToFileWithBinaryWriter(vbc, savefile.FileName);
 
                 }
             }
