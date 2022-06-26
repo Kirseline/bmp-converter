@@ -39,7 +39,7 @@ namespace bmp
 
         private byte[] write_vbc(Bitmap img)
         {
-            int bytex = (int)img.Width / 8 ;
+            int bytex = (int)img.Width / 8 +1 ;
             byte bx = 0;
             UInt16 bmp_dimension = (UInt16)((bytex * img.Height) + 5);
             Color white = Color.FromArgb(255, 255, 255);
