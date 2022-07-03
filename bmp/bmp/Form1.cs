@@ -65,7 +65,7 @@ namespace bmp
                     if (byte_completition == 8)
                     {
                         array[idx++] = bx;
-                        bx = 0xff;
+                        bx = 0x00;
                         byte_completition = 0;
                     }
 
