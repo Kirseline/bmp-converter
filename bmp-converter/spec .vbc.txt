@@ -1,0 +1,8 @@
+header + body
+
+header 5 bytes:
+	- vbc id
+	- width
+	- height
+	- file (header + body) byte count (high byte)
+	- file (header + body) byte count (low byte)
